@@ -1,6 +1,12 @@
 
 # Python installation on Ubuntu
 
+## Prerequisites
+
+- Ensure you have `sudo` privileges.
+- A stable internet connection is required.
+- Update your system's package list to ensure you have the latest versions using `sudo apt update` command.
+
 ## Instructions to install Python (`3.11.11`) on Ubuntu (`24.04-LTS`)
 
 > The analogous steps should be followed for other versions of Python or Linux distributions, though the commands may vary.
