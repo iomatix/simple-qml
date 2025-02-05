@@ -79,7 +79,7 @@ Since TensorFlow Quantum isn’t officially supported on native Windows, you sho
         wsl -l -v
        ```
 
-3. **Open Your WSL Terminal and Follow the Instructions:**
+2. **Open Your WSL Terminal and Follow the Instructions:**
     - Inside the WSL terminal, create and activate your virtual environment, and install the required packages using the Linux/macOS commands provided above.
 
 ### Note for Visual Studio Code users on Windows
