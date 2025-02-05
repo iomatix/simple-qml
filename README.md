@@ -138,7 +138,7 @@ wsl -l -v
 
 ##### 2. **Open Your WSL Terminal and Follow the Instructions:**
 
-- Inside the WSL terminal, create and activate your virtual environment, and install the required packages using the Linux/macOS commands provided above.
+- Within the WSL terminal, [create and activate your virtual environment, and install the required packages using the Linux/macOS commands provided above](#native-installation-on-linuxmacos).
 
 #### Note for Visual Studio Code users on Windows
 
