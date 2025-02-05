@@ -56,7 +56,7 @@ python3.11 -m venv .venv
 
 ##### 3. **Activate the Environment:**
 
-- Linux/macOS (or WSL on Windows):
+> Linux/macOS (or WSL on Windows):
 
 ```bash
 
@@ -66,9 +66,11 @@ source .venv/bin/activate
 
 ##### 4. **Verify the Environment is Active:**
 
+> Should output a path like ".venv/bin/python"
+
 ```bash
 
-which python # Should output a path like ".venv/bin/python"
+which python
 
 ```
 
@@ -94,7 +96,7 @@ python -m pip install tensorflow-quantum==0.7.3
 
 ##### 7. **Install Qiskit:**
 
-[Qiskit Installation Guide](https://docs.quantum.ibm.com/guides/install-qiskit)
+> [Qiskit Installation Guide](https://docs.quantum.ibm.com/guides/install-qiskit)
 
 ```bash
 
@@ -116,11 +118,10 @@ Since TensorFlow Quantum isn’t officially supported on native Windows, you sho
 
 #### 1. **Enable WSL and Install a Linux Distribution:**
 
-- Personally I recommend Ubuntu or Fedora. Important note is that the distribution should be supported by [CUDA](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu).
+> Personally I recommend Ubuntu or Fedora. Important note is that the distribution should be supported by [CUDA](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu).
+> Example below shows installation of Ubuntu distribution (24.04 LTS).
 
-- Example below shows installation of Ubuntu distribution (24.04 LTS).
-
-- Open PowerShell as Administrator and run:
+Open PowerShell as Administrator and run:
 
 ```powershell
 
@@ -138,10 +139,9 @@ wsl -l -v
 
 #### 2. **Open Your WSL Terminal and Follow the Instructions:**
 
-- Within the WSL terminal, [create and activate your virtual environment, and install the required packages using the Linux/macOS commands provided above](#native-installation-on-linuxmacos).
+Within the WSL terminal, [create and activate your virtual environment, and install the required packages using the Linux/macOS commands provided above](#native-installation-on-linuxmacos).
 
 #### Note for Visual Studio Code users on Windows
 
-- Open the integrated terminal in VS Code (e.g. via `Ctrl + ~`), and open WSL terminal in current project using `wsl` command.
-
-- Alternatively, in VS Code, press `Ctrl + Shift + P` and from Command Pallette find `WSL` and select `Remote-WSL: Reopen Folder in WSL`. This will open current project in a WSL environment.
+Open the integrated terminal in VS Code (e.g. via `Ctrl + ~`), and open WSL terminal in current project using `wsl` command.
+> Alternatively, in VS Code, press `Ctrl + Shift + P` and from Command Pallette find `WSL` and select `Remote-WSL: Reopen Folder in WSL`. This will open current project in a WSL environment.
