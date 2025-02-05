@@ -20,7 +20,7 @@
     - [Windows Native Setup (Using WSL)](#windows-native-setup-using-wsl)
         - [1. **Enable WSL and Install a Linux Distribution:**](#1-enable-wsl-and-install-a-linux-distribution)
         - [2. **Open Your WSL Terminal and Follow the Instructions:**](#2-open-your-wsl-terminal-and-follow-the-instructions)
-      - [Note for Visual Studio Code users on Windows](#note-for-visual-studio-code-users-on-windows)
+        - [Note for Visual Studio Code users on Windows](#note-for-visual-studio-code-users-on-windows)
 
 ---
 
@@ -140,7 +140,7 @@ wsl -l -v
 
 - Within the WSL terminal, [create and activate your virtual environment, and install the required packages using the Linux/macOS commands provided above](#native-installation-on-linuxmacos).
 
-#### Note for Visual Studio Code users on Windows
+##### Note for Visual Studio Code users on Windows
 
 - Open the integrated terminal in VS Code (e.g. via `Ctrl + ~`), and open WSL terminal in current project using `wsl` command.
 
