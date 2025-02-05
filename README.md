@@ -4,7 +4,7 @@
 
 ### Requirements:
 - **Python 3.11** (TensorFlow Quantum supports Python 3.9–3.11)
-- **GPU with TensorFlow 2.15 support** *(Ensure proper CUDA and cuDNN setup)*
+- **GPU with TensorFlow 2.15 support** *(Ensure proper [CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html) and [cuDNN](https://developer.nvidia.com/cudnn) setup)*
 - **Note for Windows Users:** TensorFlow Quantum isn’t officially supported on Windows. It’s recommended to use Windows Subsystem for Linux (WSL).
 
 ---
