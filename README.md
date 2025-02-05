@@ -18,10 +18,10 @@
         - [7. **Install Qiskit:**](#7-install-qiskit)
         - [8. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**](#8-optional---install-qiskit-runtime-for-quantum-hardware-jobs)
     - [Windows Native Setup (Using WSL)](#windows-native-setup-using-wsl)
-        - [1. **Enable WSL and Install a Linux Distribution:**](#1-enable-wsl-and-install-a-linux-distribution)
-        - [2. **Open Your WSL Terminal and Follow the Instructions:**](#2-open-your-wsl-terminal-and-follow-the-instructions)
-        - [Note for Visual Studio Code users on Windows](#note-for-visual-studio-code-users-on-windows)
-
+      - [1. **Enable WSL and Install a Linux Distribution:**](#1-enable-wsl-and-install-a-linux-distribution)
+      - [2. **Open Your WSL Terminal and Follow the Instructions:**](#2-open-your-wsl-terminal-and-follow-the-instructions)
+      - [Note for Visual Studio Code users on Windows](#note-for-visual-studio-code-users-on-windows)
+  
 ---
 
 ### Installation Guide
@@ -114,7 +114,7 @@ python -m pip install qiskit-ibm-runtime
 
 Since TensorFlow Quantum isn’t officially supported on native Windows, you should use Windows Subsystem for Linux (WSL).
 
-##### 1. **Enable WSL and Install a Linux Distribution:**
+#### 1. **Enable WSL and Install a Linux Distribution:**
 
 - Personally I recommend Ubuntu or Fedora. Important note is that the distribution should be supported by [CUDA](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu).
 
@@ -136,11 +136,11 @@ wsl -l -v
 
 ```
 
-##### 2. **Open Your WSL Terminal and Follow the Instructions:**
+#### 2. **Open Your WSL Terminal and Follow the Instructions:**
 
 - Within the WSL terminal, [create and activate your virtual environment, and install the required packages using the Linux/macOS commands provided above](#native-installation-on-linuxmacos).
 
-##### Note for Visual Studio Code users on Windows
+#### Note for Visual Studio Code users on Windows
 
 - Open the integrated terminal in VS Code (e.g. via `Ctrl + ~`), and open WSL terminal in current project using `wsl` command.
 
