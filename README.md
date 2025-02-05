@@ -68,8 +68,8 @@ Since TensorFlow Quantum isn’t officially supported on native Windows, you sho
 
 1. **Enable WSL and Install a Linux Distribution:**
    - Personally I recommend Ubuntu or Fedora. Important note is that the distribution should be supported by [CUDA](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu).
-   - This example shows installation of Ubuntu distribution (24.04 LTS).
-   Open PowerShell as Administrator and run:
+   - Example below shows installation of Ubuntu distribution (24.04 LTS).
+   - Open PowerShell as Administrator and run:
 
        ```powershell
         wsl --update
