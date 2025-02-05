@@ -3,7 +3,7 @@
 ## Environment Setup: [TensorFlow Quantum Installation Guide](https://www.tensorflow.org/quantum/install)
 
 ### Requirements:
-- **Python 3.9** (TensorFlow Quantum supports Python 3.7–3.9)
+- **Python 3.11** (TensorFlow Quantum supports Python 3.7–3.11)
 - **GPU with TensorFlow 2.15 support** *(Ensure proper CUDA and cuDNN setup)*
 - **Note for Windows Users:** TensorFlow Quantum isn’t officially supported on Windows. It’s recommended to use Windows Subsystem for Linux (WSL).
 
