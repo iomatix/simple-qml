@@ -11,12 +11,11 @@
       - [Step-by-Step Setup](#step-by-step-setup)
         - [1. **Install Python 3.11:**](#1-install-python-311)
         - [2. **Create a Virtual Environment for Python 3.11:**](#2-create-a-virtual-environment-for-python-311)
-        - [3. **Activate the Environment:**](#3-activate-the-environment)
-        - [4. **Verify the Environment is Active:**](#4-verify-the-environment-is-active)
-        - [5. **Upgrade and Ensure pip:**](#5-upgrade-and-ensure-pip)
-        - [6. **Install TensorFlow and TensorFlow Quantum:**](#6-install-tensorflow-and-tensorflow-quantum)
-        - [7. **Install Qiskit:**](#7-install-qiskit)
-        - [8. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**](#8-optional---install-qiskit-runtime-for-quantum-hardware-jobs)
+        - [3. **Learn How To Activate the Environment:**](#3-learn-how-to-activate-the-environment)
+        - [4. **Upgrade and Ensure pip:**](#4-upgrade-and-ensure-pip)
+        - [5. **Install TensorRT, TensorFlow, and TensorFlow Quantum:**](#5-install-tensorrt-tensorflow-and-tensorflow-quantum)
+        - [6. **Install Qiskit:**](#6-install-qiskit)
+        - [7. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**](#7-optional---install-qiskit-runtime-for-quantum-hardware-jobs)
     - [Windows Native Setup (Using WSL)](#windows-native-setup-using-wsl)
       - [1. **Enable WSL and Install a Linux Distribution:**](#1-enable-wsl-and-install-a-linux-distribution)
       - [2. **Open Your WSL Terminal and Follow the Instructions:**](#2-open-your-wsl-terminal-and-follow-the-instructions)
@@ -54,27 +53,25 @@ python3.11 -m venv .venv
 
 ```
 
-##### 3. **Activate the Environment:**
+##### 3. **Learn How To Activate the Environment:**
 
 > Linux/macOS (or WSL on Windows):
 
 ```bash
 
 source .venv/bin/activate
-
-```
-
-##### 4. **Verify the Environment is Active:**
-
-> Should output a path like ".venv/bin/python"
-
-```bash
-
 which python
+deactivate
 
 ```
 
-##### 5. **Upgrade and Ensure pip:**
+> Note that the activation script is in the project's root folder within `.venv/bin/activate`
+> , `which python` output should print a path like ".venv/bin/python"
+> , and deactivation is straight forward with `deactivate` command.
+>
+> Good habit is to deactivate python's environment before performing OS-level package updates or installations. 
+
+##### 4. **Upgrade and Ensure pip:**
 
 ```bash
 
@@ -84,17 +81,44 @@ python -m pip --version
 
 ```
 
-##### 6. **Install TensorFlow and TensorFlow Quantum:**
+##### 5. **Install TensorRT, TensorFlow, and TensorFlow Quantum:**
+
+> Remember to install [**CUDA**](https://developer.nvidia.com/cuda-downloads?target_os=Linux) and [**cuDNN**](https://developer.nvidia.com/cudnn-downloads?target_os=Linux) first.
+>
+> Notable for Windows - WSL 2 Users: [Installation Doc](https://docs.nvidia.com/cuda/wsl-user-guide/index.html).
+>
 
 ```bash
+
+deactivate # deactivate python environment
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
+
+sudo mv cuda-ubuntu2404.pin /etc/apt/preferences.d/cuda-repository-pin-600
+
+sudo add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/ /"
+
+sudo apt-get update
+
+sudo apt-get install tensorrt
+
+sudo apt-get install python3-libnvinfer-dev
+
+source .venv/bin/activate # activate python environment again
 
 python -m pip install tensorflow==2.15.0
 
 python -m pip install tensorflow-quantum==0.7.3
 
+python -c "import tensorflow as tf; print(tf.__version__)"
+
+python -c "import tensorflow_quantum as tfq; print(tfq.__version__)"
+
+python -c "import tensorrt as trt; print(trt.__version__)"
+
 ```
 
-##### 7. **Install Qiskit:**
+##### 6. **Install Qiskit:**
 
 > [Qiskit Installation Guide](https://docs.quantum.ibm.com/guides/install-qiskit)
 
@@ -104,7 +128,7 @@ python -m pip install qiskit
 
 ```
 
-##### 8. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**
+##### 7. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**
 
 ```bash
 

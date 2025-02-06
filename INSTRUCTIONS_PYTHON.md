@@ -42,15 +42,10 @@ Before building Python, you need to install some development tools and libraries
 ```bash
 
 sudo  apt  update
-
 sudo  apt  install  -y  build-essential  libssl-dev  zlib1g-dev  libbz2-dev  \
-
 libreadline-dev  libsqlite3-dev  wget  curl  llvm  \
-
 libncurses5-dev  libncursesw5-dev  libssl-dev  \
-
 libgdbm-dev  libdb5.3-dev  liblzma-dev  tk-dev  \
-
 libffi-dev  liblzma-dev  python3-openssl  git
 
 ```
