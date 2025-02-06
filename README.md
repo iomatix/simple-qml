@@ -73,6 +73,8 @@ deactivate
 
 ##### 4. **Upgrade and Ensure pip:**
 
+> Ensure that python environment is activated before proceeding further ! -> `source .venv/bin/activate` !
+
 ```bash
 
 python -m pip install --upgrade pip
