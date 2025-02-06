@@ -31,7 +31,7 @@
   
 - **Python 3.11** (TensorFlow Quantum supports Python 3.9–3.11)
 
-- **GPU with TensorFlow 2.15 support**  *(Ensure proper [CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html) and [cuDNN](https://developer.nvidia.com/cudnn) setup)*
+- **GPU with TensorFlow support**  *(Ensure proper [CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html) and [cuDNN](https://developer.nvidia.com/cudnn) setup)*
 
 - **Note for Windows Users:** TensorFlow Quantum isn’t officially supported on Windows. It’s recommended to use Windows Subsystem for Linux (WSL).
 
@@ -66,7 +66,7 @@ deactivate
 ```
 
 > Note that the activation script is in the project's root folder within `.venv/bin/activate`
-> , `which python` output should print a path like ".venv/bin/python"
+> , `which python` output should print a path like `".venv/bin/python"`
 > , and deactivation is straight forward with `deactivate` command.
 >
 > Good habit is to deactivate python's environment before performing OS-level package updates or installations. 
@@ -81,7 +81,7 @@ python -m pip --version
 
 ```
 
-##### 5. **Install TensorRT, TensorFlow, and TensorFlow Quantum:**
+##### 5. **Install [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/latest/installing-tensorrt/installing.html), [TensorFlow](https://www.tensorflow.org/install), and [TensorFlow Quantum](https://www.tensorflow.org/quantum/install):**
 
 > Remember to install [**CUDA**](https://developer.nvidia.com/cuda-downloads?target_os=Linux) and [**cuDNN**](https://developer.nvidia.com/cudnn-downloads?target_os=Linux) first.
 >
@@ -90,25 +90,13 @@ python -m pip --version
 
 ```bash
 
-deactivate # deactivate python environment
+python -m pip install --upgrade pip setuptools wheel
 
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
+python -m pip install --upgrade tensorflow
 
-sudo mv cuda-ubuntu2404.pin /etc/apt/preferences.d/cuda-repository-pin-600
+python -m pip install --upgrade tensorflow-quantum
 
-sudo add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/ /"
-
-sudo apt-get update
-
-sudo apt-get install tensorrt
-
-sudo apt-get install python3-libnvinfer-dev
-
-source .venv/bin/activate # activate python environment again
-
-python -m pip install tensorflow==2.15.0
-
-python -m pip install tensorflow-quantum==0.7.3
+python -m pip install --upgrade tensorrt
 
 python -c "import tensorflow as tf; print(tf.__version__)"
 
