@@ -16,7 +16,6 @@
         - [5. **Install TensorRT, TensorFlow, and TensorFlow Quantum:**](#5-install-tensorrt-tensorflow-and-tensorflow-quantum)
         - [6. **Install PennyLane:**](#6-install-pennylane)
         - [7. **Install Qiskit:**](#7-install-qiskit)
-        - [8. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**](#8-optional---install-qiskit-runtime-for-quantum-hardware-jobs)
     - [Windows Native Setup (Using WSL)](#windows-native-setup-using-wsl)
       - [1. **Enable WSL and Install a Linux Distribution:**](#1-enable-wsl-and-install-a-linux-distribution)
       - [2. **Open Your WSL Terminal and Follow the Instructions:**](#2-open-your-wsl-terminal-and-follow-the-instructions)
@@ -133,14 +132,6 @@ pip install pennylane-lightning-gpu
 ```bash
 
 python -m pip install qiskit
-
-```
-
-##### 8. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**
-
-```bash
-
-python -m pip install qiskit-ibm-runtime
 
 ```
 
