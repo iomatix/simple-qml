@@ -14,8 +14,9 @@
         - [3. **Learn How To Activate the Environment:**](#3-learn-how-to-activate-the-environment)
         - [4. **Upgrade and Ensure pip:**](#4-upgrade-and-ensure-pip)
         - [5. **Install TensorRT, TensorFlow, and TensorFlow Quantum:**](#5-install-tensorrt-tensorflow-and-tensorflow-quantum)
-        - [6. **Install Qiskit:**](#6-install-qiskit)
-        - [7. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**](#7-optional---install-qiskit-runtime-for-quantum-hardware-jobs)
+        - [6. **Install PennyLane:**](#6-install-pennylane)
+        - [7. **Install Qiskit:**](#7-install-qiskit)
+        - [8. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**](#8-optional---install-qiskit-runtime-for-quantum-hardware-jobs)
     - [Windows Native Setup (Using WSL)](#windows-native-setup-using-wsl)
       - [1. **Enable WSL and Install a Linux Distribution:**](#1-enable-wsl-and-install-a-linux-distribution)
       - [2. **Open Your WSL Terminal and Follow the Instructions:**](#2-open-your-wsl-terminal-and-follow-the-instructions)
@@ -86,7 +87,8 @@ python -m pip --version
 ##### 5. **Install [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/latest/installing-tensorrt/installing.html), [TensorFlow](https://www.tensorflow.org/install), and [TensorFlow Quantum](https://www.tensorflow.org/quantum/install):**
 
 > Remember to install [**CUDA**](https://developer.nvidia.com/cuda-downloads?target_os=Linux) and [**cuDNN**](https://developer.nvidia.com/cudnn-downloads?target_os=Linux) first.
->
+> Before installation make sure the cuDNN version is compatible with CUDA version.
+> 
 > Notable for Windows - WSL 2 Users: [Installation Doc](https://docs.nvidia.com/cuda/wsl-user-guide/index.html).
 >
 
@@ -94,21 +96,37 @@ python -m pip --version
 
 python -m pip install --upgrade pip setuptools wheel
 
-python -m pip install --upgrade tensorflow
+python -m pip install tensorflow==2.15.0 # Check compatible version at https://www.tensorflow.org/quantum/install
 
-python -m pip install --upgrade tensorflow-quantum
+python -m pip install -U tensorflow-quantum
 
-python -m pip install --upgrade tensorrt
+python -m pip install --upgrade tensorrt # tensorrt-cu11 | tensorrt-cu12 for specific version
 
-python -c "import tensorflow as tf; print(tf.__version__)"
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda/bin:$PATH
 
-python -c "import tensorflow_quantum as tfq; print(tfq.__version__)"
+nvcc --version
+cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
-python -c "import tensorrt as trt; print(trt.__version__)"
+python -c "import tensorflow as tf; from tensorflow.python.platform import build_info as tf_build_info; import tensorrt as tsrt; import tensorflow_quantum as tfq; print('cuDNN Version:', tf_build_info.cudnn_version_number); print('TensorRT Version:', tsrt.__version__); print('TensorFlow Version:', tf.__version__); print('TensorFlow Quantum Version:', tfq.__version__); print('Num GPUs Available: ', len(tf.config.experimental.list_physical_devices('GPU')))"
+
 
 ```
 
-##### 6. **Install Qiskit:**
+##### 6. **Install [PennyLane](https://pennylane.ai/features):**
+
+> [PennyLane Documentation](https://docs.pennylane.ai/en/stable/)
+
+```bash
+
+python -m pip install pennylane --upgrade
+pip install custatevec_cu12
+pip install pennylane-lightning-gpu
+
+
+```
+
+##### 7. **Install Qiskit:**
 
 > [Qiskit Installation Guide](https://docs.quantum.ibm.com/guides/install-qiskit)
 
@@ -118,7 +136,7 @@ python -m pip install qiskit
 
 ```
 
-##### 7. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**
+##### 8. **Optional - Install Qiskit Runtime (for Quantum Hardware Jobs):**
 
 ```bash
 
