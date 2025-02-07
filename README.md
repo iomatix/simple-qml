@@ -86,7 +86,7 @@ python -m pip --version
 ##### 5. **Install [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/latest/installing-tensorrt/installing.html), [TensorFlow](https://www.tensorflow.org/install), and [TensorFlow Quantum](https://www.tensorflow.org/quantum/install):**
 
 > Remember to install [**CUDA**](https://developer.nvidia.com/cuda-downloads?target_os=Linux) and [**cuDNN**](https://developer.nvidia.com/cudnn-downloads?target_os=Linux) first.
-> Before installation make sure the cuDNN version is compatible with CUDA version. TensorFlow 2.15.0 is officially tested and compatible with CUDA 12.2 and cuDNN 8.9
+> Before installation make sure the cuDNN version is compatible with CUDA version. TensorFlow 2.15.0 is [officially tested and compatible](https://www.tensorflow.org/install/pip#software_requirements) with CUDA 12.3 and cuDNN 8.9.7
 > 
 > Notable for Windows - WSL 2 Users: [Installation Doc](https://docs.nvidia.com/cuda/wsl-user-guide/index.html).
 >
