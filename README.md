@@ -86,7 +86,7 @@ python -m pip --version
 ##### 5. **Install [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/latest/installing-tensorrt/installing.html), [TensorFlow](https://www.tensorflow.org/install), and [TensorFlow Quantum](https://www.tensorflow.org/quantum/install):**
 
 > Remember to install [**CUDA**](https://developer.nvidia.com/cuda-downloads?target_os=Linux) and [**cuDNN**](https://developer.nvidia.com/cudnn-downloads?target_os=Linux) first.
-> Before installation make sure the cuDNN version is compatible with CUDA version.
+> Before installation make sure the cuDNN version is compatible with CUDA version. TensorFlow 2.15.0 is officially tested and compatible with CUDA 12.2 and cuDNN 8.9
 > 
 > Notable for Windows - WSL 2 Users: [Installation Doc](https://docs.nvidia.com/cuda/wsl-user-guide/index.html).
 >
@@ -101,8 +101,12 @@ python -m pip install -U tensorflow-quantum
 
 python -m pip install --upgrade tensorrt # tensorrt-cu11 | tensorrt-cu12 for specific version
 
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+# Installation Paths: If CUDA or other libraries are installed in custom locations, you'll need to adjust the paths accordingly.
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64
+echo $PATH
+echo $LD_LIBRARY_PATH
 
 nvcc --version
 cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
