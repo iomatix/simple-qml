@@ -120,9 +120,9 @@ python -c "import tensorflow as tf; from tensorflow.python.platform import build
 ```bash
 
 python -m pip install pennylane --upgrade
+
 pip install custatevec_cu12
 pip install pennylane-lightning-gpu
-
 
 ```
 
